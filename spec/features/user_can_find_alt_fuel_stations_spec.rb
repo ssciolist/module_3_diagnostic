@@ -28,9 +28,9 @@ describe 'As a user' do
           expect(page).to have_css(".access_times")
         end
 
-        within(last(".station")) do
+        within all(".station").last do
           within(".distance") do
-            expect(page).to_not have_content("6.")
+            expect(page).to_not have_content('6.')
           end
         end
       end
