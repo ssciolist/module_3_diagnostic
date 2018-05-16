@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    conn = Faraday.new(url: "https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=#{ENV['API_KEY']}&location=#{params[:q]}&limit=10&radius=6")
+    conn = Faraday.new(url: "https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=#{ENV['API_KEY']}&location=#{params[:q]}&limit=10&radius=6&fuel_type=ELEC,LPG")
     body = conn.get.body
 
     raw_results = JSON.parse(body, symbolize_names: true)
