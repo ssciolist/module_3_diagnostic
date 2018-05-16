@@ -1,5 +1,6 @@
 class Station
-  def search_results
-    conn = Faraday.new(url: )
+  def self.search_results(zipcode)
+    
+    binding.pry
   end
 end
