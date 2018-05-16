@@ -13,7 +13,12 @@ describe 'As a user' do
 
         expect(page).to have_css(".station", count: 10)
         # within 6 miles sorted by distance << How to test this?
-        # And the stations should be limited to Electric and Propane << How to test this?
+
+        expect(page).to_not have_content("BD")
+        expect(page).to_not have_content("CNG")
+        expect(page).to_not have_content("E85")
+        expect(page).to_not have_content("HY")
+        expect(page).to_not have_content("LNG")
 
         within(first(".station")) do
           expect(page).to have_css(".name")
